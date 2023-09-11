@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:memo/utils/routes.dart';
+import 'package:memo/config/routes.dart';
 
 void main() {
   runApp(const MyApp());
