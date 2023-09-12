@@ -4,5 +4,5 @@ import 'package:memo/presentation/splash/splash_screen.dart';
 
 List<GetPage> routes() =>
     [GetPage(name: '/', page: () => const SplashScreen()),
-    GetPage(name: 'home', page: ()=>const HomeScreen())
+    GetPage(name: '/home', page: ()=>const HomeScreen())
     ];
