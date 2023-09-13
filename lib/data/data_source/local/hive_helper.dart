@@ -32,10 +32,16 @@ class HiveHelper {
   }
 
   // read from [NotesBox]
-  List<NoteModel> readFromHive() {
-    var noteBox = Hive.box<NoteModel>(notesBox);
-    return noteBox.values.toList();
-  }
+  Future readFromHive() async {
+  final box = await Hive.openBox('myBox');
+  final dataList = box.values.toList(); // Replace with your key and data type
+  await box.close();
+  return dataList;
+}
+  // Future <List<NoteModel>> readFromHive() async{
+  //   var noteBox = Hive.box<NoteModel>(notesBox);
+  //   return noteBox.values.toList();
+  // }
 
   //delete from [NotesBox]
   Future deleteData(int index) async {
