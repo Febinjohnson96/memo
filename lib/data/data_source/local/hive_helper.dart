@@ -23,7 +23,7 @@ class HiveHelper {
   }
 
   //insert into [NotesBox]
-  Future insertIntoNoteBox(NoteModel note) async {
+   insertIntoNoteBox(NoteModel note)  {
     Box noteBox = Hive.box<NoteModel>(notesBox);
     noteBox.add(note);
     if (noteBox.isNotEmpty) {
@@ -32,20 +32,21 @@ class HiveHelper {
   }
 
   // read from [NotesBox]
-  Future readFromHive() async {
-  final box = await Hive.openBox('myBox');
-  final dataList = box.values.toList(); // Replace with your key and data type
-  await box.close();
-  return dataList;
-}
-  // Future <List<NoteModel>> readFromHive() async{
-  //   var noteBox = Hive.box<NoteModel>(notesBox);
-  //   return noteBox.values.toList();
-  // }
+   List<NoteModel> readFromHive() {
+    final box =  Hive.box<NoteModel>(notesBox);
+    final dataList = box.values.toList(); // Replace with your key and data type
+    //  box.close();
+    return dataList;
+  }
 
   //delete from [NotesBox]
   Future deleteData(int index) async {
     Box noteBox = Hive.box<NoteModel>(notesBox);
     noteBox.deleteAt(index);
+  }
+
+  Future closeBox() async {
+    final box = await Hive.openBox(notesBox);
+    await box.close();
   }
 }

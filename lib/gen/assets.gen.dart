@@ -12,8 +12,20 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesAddnoteGen get addnote => const $AssetsImagesAddnoteGen();
   $AssetsImagesEmptyScreenGen get emptyScreen =>
       const $AssetsImagesEmptyScreenGen();
+}
+
+class $AssetsImagesAddnoteGen {
+  const $AssetsImagesAddnoteGen();
+
+  /// File path: assets/images/addnote/addnote.jpg
+  AssetGenImage get addnote =>
+      const AssetGenImage('assets/images/addnote/addnote.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [addnote];
 }
 
 class $AssetsImagesEmptyScreenGen {
